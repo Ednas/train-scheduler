@@ -9,20 +9,66 @@
 	<script src="https://cdn.firebase.com/js/client/2.4.1/firebase.js"></script>
 <!--JavaScript-->
 	<script src="https://code.jquery.com/jquery-2.2.1.min.js"></script>
-	<script src="app.js"></script>
-<!--CSS-->
-	<link rel="stylesheet" type="text/css" href="assets/css/reset.css">
-	<link rel="stylesheet" type="text/css" href="assets/css/style.css">
+	<script src="assets/javascript/app.js"></script>
 <!-- Latest compiled and minified CSS -->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+<!--CSS-->
+	<link rel="stylesheet" type="text/css" href="assets/css/style.css">
 </head>
-
-<header class="jumbotron">
-	Anytime is Train Time 
-	<br>
-	Choo Choo! Chugga Chugga, Choo Choo!
-</header>
 <body>
+
+<div class="container">
+	<div class="jumbotron">
+		<h1 class="text-center">Anytime is Train Time</h1>
+		<br>
+		<h2 class="text-center">Choo Choo! Chugga Chugga, Choo Choo!</h2>
+	</div>
+
+		<div class="col-lg-12">
+		<div class="panel panel-default">
+				<div class="panel-heading">
+					<h3 class="panel-title">Current Train Schedule</h3>
+				</div>
+						<div class="panel-body">
+							<table>
+								<tr>
+							<td>Train Name</td>
+							<td>Destination</td>
+							<td>Frequency (min)</td>
+							<td>Next Arrival</td>
+							<td>Minutes Away</td>
+								</tr>
+							</table>
+						</div>
+		</div>
+	<div class="col-lg-12">
+		<div class="panel panel-default">
+				<div class="panel-heading">
+					<h3 class="panel-title">Add Train</h3>
+				</div>
+						<div class="panel-body">
+							<form>
+							<label>Train Name</label>
+							<br>
+							<input type="text" name="trName">
+							<br>
+							<label>Destination</label>
+							<br>
+							<input type="text" name="trDest">
+							<br>
+							<label>First Train Time (HH:mm - military time)</label>
+							<br>
+							<input type="time" name="trTime">
+							<br>
+							<label>Frequency (min)</label>
+							<br>
+							<input type="time" name="trFrequency">
+							<br>
+							<button>Submit</button>
+							</form>
+						</div>		
+		</div>
+	</div>
 
 </body>
 </html>
