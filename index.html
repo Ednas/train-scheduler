@@ -6,7 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>Train Scheduler</title>
 <!--Firebase-->
-	<script src="https://cdn.firebase.com/js/client/2.4.1/firebase.js"></script>
+<script src="https://www.gstatic.com/firebasejs/4.12.1/firebase.js"></script>
+
 <!--jQuery-->
 	<script src="https://code.jquery.com/jquery-2.2.1.min.js"></script>
 
@@ -53,26 +54,29 @@
 							<form>
 							<label>Train Name</label>
 							<br>
-							<input type="text" name="trName">
+							<input type="text" name="trName" id="trainNameInput">
 							<br>
 							<label>Destination</label>
 							<br>
-							<input type="text" name="trDest">
+							<input type="text" name="trDest" id="destinationInput">
 							<br>
 							<label>First Train Time (HH:mm - military time)</label>
 							<br>
-							<input type="time" name="trTime">
+							<input type="time" name="trTime" id="firstTrainInput">
 							<br>
 							<label>Frequency (min)</label>
 							<br>
-							<input type="time" name="trFrequency">
+							<input type="number" name="trFrequency" id="frequencyInput">
 							<br>
-							<button>Submit</button>
+							<button id="addTrainBtn">Submit</button>
 							</form>
 						</div>		
 		</div>
 	</div>
 <!--JavaScript-->	
 	<script src="assets/javascript/app.js"></script>
+<!--Firebase app-->
+	<script src="https://www.gstatic.com/firebasejs/4.12.0/firebase-app.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/4.12.0/firebase-database.js"></script>
 </body>
 </html>
