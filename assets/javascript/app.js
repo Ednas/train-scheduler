@@ -67,36 +67,35 @@ event.preventDefault();  // Keeps from refreshing the page
 
 
 // 4. Create Firebase event for adding trains to the database and a row in the html when a user adds an entry
-// trainData.on("child_added", function(childSnapshot, prevChildKey){
+trainData.on("child_added", function(childSnapshot, prevChildKey){
 
-// 	console.log(childSnapshot.val());
+	console.log(childSnapshot.val());
 
-// 	// Store everything into a variable.
-// 	var tName = childSnapshot.val().name;
-// 	var tDestination = childSnapshot.val().destination;
-// 	var tFrequency = childSnapshot.val().frequency;
-// 	var tFirstTrain = childSnapshot.val().firstTrain;
+	// Store everything into a variable.
+	var tName = childSnapshot.val().name;
+	var tDestination = childSnapshot.val().destination;
+	var tFrequency = childSnapshot.val().frequency;
+	var tFirstTrain = childSnapshot.val().firstTrain;
 
-// 	// Calculate the minutes until arrival using hardcore math
-// 	// To calculate the minutes till arrival, take the current time in unix subtract the FirstTrain time and find the modulus between the difference and the frequency  
-// 	var differenceTimes = moment().diff(moment.unix(tFirstTrain), "minutes");
-// 	var tRemainder = moment().diff(moment.unix(tFirstTrain), "minutes") % tFrequency ;
-// 	var tMinutes = tFrequency - tRemainder;
+	// Calculate the minutes until arrival using hardcore math
+	// To calculate the minutes till arrival, take the current time in unix subtract the FirstTrain time and find the modulus between the difference and the frequency  
+	var differenceTimes = moment().diff(moment.unix(tFirstTrain), "minutes");
+	var tRemainder = moment().diff(moment.unix(tFirstTrain), "minutes") % tFrequency ;
+	var tMinutes = tFrequency - tRemainder;
 
-// 	// To calculate the arrival time, add the tMinutes to the currrent time
-// 	var tArrival = moment().add(tMinutes, "m").format("hh:mm A"); 
-// 	console.log(tMinutes);
-// 	console.log(tArrival);
+	// To calculate the arrival time, add the tMinutes to the currrent time
+	var tArrival = moment().add(tMinutes, "m").format("hh:mm A"); 
+	console.log(tMinutes + " minutes to arrival");
+	console.log(tArrival + " Arrival time");
+	console.log(moment().format("hh:mm A") + " current time Am/Pm format");
+	console.log(moment().format("X") + " current time in Unix format");
 
-// 	console.log(moment().format("hh:mm A"));
-// 	console.log(tArrival);
-// 	console.log(moment().format("X"));
+	// Add each train's data into the table 
+	$("#trainTable > tbody").append("<tr><td>" + tName + "</td><td>" + tDestination + "</td><td>" + tFrequency + "</td><td>" + tArrival + "</td><td>" + tMinutes + "</td></tr>");
 
-// 	// Add each train's data into the table 
-// 	$("#trainTable > tbody").append("<tr><td>" + tName + "</td><td>" + tDestination + "</td><td>" + tFrequency + "</td><td>" + tArrival + "</td><td>" + tMinutes + "</td></tr>");
+});
 
-// });
-
+$("#currentTime").append(moment().format("hh:mm A"));
 
 // Assume the following situations. 
 
@@ -113,7 +112,6 @@ event.preventDefault();  // Keeps from refreshing the page
 // Assume the current time is 3:16 AM....
 // What time would the next train be...? (Use your brain first)
 // It would be 3:21 -- 5 minutes away
-
 
 // ==========================================================
 
