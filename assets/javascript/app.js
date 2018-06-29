@@ -91,7 +91,7 @@ trainData.on("child_added", function(childSnapshot, prevChildKey){
 	console.log(moment().format("X") + " current time in Unix format");
 
 	// Add each train's data into the table 
-	$("#trainTable > tbody").append("<tr><td>" + tName + "</td><td>" + tDestination + "</td><td>" + tFrequency + "</td><td>" + tArrival + "</td><td>" + tMinutes + "</td></tr>");
+	$("#trainTable > tbody").append("<tr><td>" + tName + "</td><td>" + tDestination + "</td><td id='min'>" + tFrequency + "</td><td id='min'>" + tArrival + "</td><td id='min'>" + tMinutes + "</td></tr>");
 
 });
 
@@ -128,3 +128,4 @@ $("#currentTime").append(moment().format("hh:mm A"));
 // 16 % 7 = 2 (Modulus is the remainder)
 // 7 - 2 = 5 minutes away
 // 5 + 3:16 = 3:21
+
