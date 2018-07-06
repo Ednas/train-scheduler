@@ -8,3 +8,4 @@ Uses Firebase to host a globally available set of data that will be retrieved an
 [Getting started with Firebase][https://firebase.google.com/docs/web/setup]
 [Moment.js][https://momentjs.com/]
 
+*Known issue: Adding trains in Firefox does not work. It appears to be a Firebase & Firefox specific issue*
